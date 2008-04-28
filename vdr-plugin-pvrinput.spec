@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define oversion 2007-11-29
 %define version	%(echo %oversion | tr - .)
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: use Hauppauge PVR as input device
 Name:		%name
