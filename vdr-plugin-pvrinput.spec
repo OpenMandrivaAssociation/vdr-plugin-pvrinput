@@ -1,18 +1,19 @@
 
 %define plugin	pvrinput
 %define name	vdr-plugin-%plugin
-%define oversion 2008-10-04
+%define oversion 2010-04-14
 %define version	%(echo %oversion | tr - .)
-%define rel	2
+%define rel	1
 
 Summary:	VDR plugin: use Hauppauge PVR as input device
 Name:		%name
 Version:	%version
 Release:	%mkrel %rel
 Group:		Video
-License:	GPL
-URL:		http://drseltsam.device.name/vdr/pvr/src/pvrinput
-Source:		http://drseltsam.device.name/vdr/pvr/src/pvrinput/vdr-%plugin-%oversion.tgz
+# otherwise GPL+, but menu.c contains GPLv2+ making this GPLv2+ as a whole
+License:	GPLv2+
+URL:		http://projects.vdr-developer.org/projects/show/plg-pvrinput
+Source:		vdr-%plugin-%oversion.tgz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
@@ -24,8 +25,6 @@ requires ivtv driver version 0.8 or higher.
 
 %prep
 %setup -q -n %plugin-%oversion
-# nice, dirs without +x :)
-find -type d | xargs chmod a+x
 %vdr_plugin_prep
 
 %build
@@ -46,4 +45,4 @@ rm -rf %{buildroot}
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
-%doc README HISTORY TODO example/channels.conf_newsyntax.example
+%doc README HISTORY TODO example 
