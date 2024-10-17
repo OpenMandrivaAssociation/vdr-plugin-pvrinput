@@ -12,7 +12,7 @@ Release:	%mkrel %rel
 Group:		Video
 # otherwise GPL+, but menu.c contains GPLv2+ making this GPLv2+ as a whole
 License:	GPLv2+
-URL:		http://projects.vdr-developer.org/projects/show/plg-pvrinput
+URL:		https://projects.vdr-developer.org/projects/show/plg-pvrinput
 Source:		vdr-%plugin-%oversion.tgz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
